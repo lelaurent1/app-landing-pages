@@ -17,7 +17,6 @@ import StatBodyCopy from './StatBodyCopy.tsx'
                 label: string;
                 isLast?: boolean;
             }[];
-            display: "none" | "flex";
             hasTabIndex?: boolean;
         }
     
@@ -34,7 +33,6 @@ import StatBodyCopy from './StatBodyCopy.tsx'
                 brand,
                 title,
                 stats,
-                display,
                 hasTabIndex
             }: StoryCardData = getStoryCardData(dataId);
 
@@ -50,7 +48,6 @@ import StatBodyCopy from './StatBodyCopy.tsx'
                     </div>
                     <div
                         className={`testimonials-01-list-details ${imageVariant}`}
-                        style={{ display: display }}
                     >
                         <div className={"stories-card-content"}>
                             <div className={"stories-card-title-wrap"}>
@@ -106,7 +103,6 @@ function getStoryCardData(id): StoryCardData  {
                   "imgId": "42",
                   "brand": "Aunt Fannie's",
                   "title": "Aunt Fannie’s scaled an eco-cleaner to 8x Amazon sales in 90 days",
-                  "display": "none",
                   "stats": [
                     { "value": "8x", "label": "Revenue", "isLast": undefined },
                     { "value": "528k", "label": "Impressions", "isLast": undefined },
@@ -120,7 +116,6 @@ function getStoryCardData(id): StoryCardData  {
                     "imgId": "42",
                     "brand": "Aunt Fannie's",
                     "title": "Aunt Fannie’s scaled an eco-cleaner to 8x Amazon sales in 90 days",
-                    "display": "flex",
                     "hasTabIndex": undefined,
                     "stats": [
                         { "value": "8x", "label": "Revenue", "isLast": undefined },
@@ -134,7 +129,6 @@ function getStoryCardData(id): StoryCardData  {
                     "imgId": "43",
                     "brand": "Naked Sunday",
                     "title": "How Naked Sunday scaled BeautyScreen™ to 10x Amazon sales in 4 months",
-                    "display": "flex",
                     "hasTabIndex": true,
                     "stats": [
                         { "value": "10x", "label": "Revenue", "isLast": undefined },
@@ -148,7 +142,6 @@ function getStoryCardData(id): StoryCardData  {
                     "imgId": "43",
                     "brand": "Naked Sunday",
                     "title": "How Naked Sunday scaled BeautyScreen™ to 10x Amazon sales in 4 months",
-                    "display": "none",
                     "hasTabIndex": true,
                     "stats": [
                         { "value": "10x", "label": "Revenue", "isLast": undefined },
@@ -162,7 +155,6 @@ function getStoryCardData(id): StoryCardData  {
                   "imgId": "44",
                   "brand": "Inopro",
                   "title": "InoPro scaled Amazon sales 7x with Influencer-driven demand",
-                  "display": "none",
                   "hasTabIndex": true,
                   "stats": [
                     { "value": "7x", "label": "Monthly Sales", "isLast": undefined },
@@ -176,7 +168,6 @@ function getStoryCardData(id): StoryCardData  {
                   "imgId": "42",
                   "brand": "Aunt Fannie's",
                   "title": "Aunt Fannie’s scaled an eco-cleaner to 8x Amazon sales in 90 days",
-                  "display": "none",
                   "stats": [
                     { "value": "8x", "label": "Revenue", "isLast": undefined },
                     { "value": "528k", "label": "Impressions", "isLast": undefined },
