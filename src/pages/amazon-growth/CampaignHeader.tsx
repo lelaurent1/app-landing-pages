@@ -38,22 +38,8 @@ function CampaignHeader() {
                                     <HeaderStat value="4x" label="ad conversions" />
 
                     </div>
-                    <div
-                        style={{
-                            marginTop: "var(--_variable-spacing---component-spacing)",
-                            display: "flex",
-                            justifyContent: "flex-start",
-                            width: "100%",
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: "inline-flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                gap: "10px",
-                            }}
-                        >
+                    <div className={"hero-cta-wrap"}>
+                        <div className={"hero-cta-stack"}>
                             <a
                                 className={"button"}
                                 style={{
@@ -69,18 +55,35 @@ function CampaignHeader() {
                                 {CTA_TEXT}
                                 <ArrowRight size={22} strokeWidth={2} />
                             </a>
-                            <p
-                                style={{
-                                    margin: 0,
-                                    fontSize: "0.875rem",
-                                    color: "var(--grey-body)",
-                                    textAlign: "center",
-                                }}
-                            >
-                                {CTA_CAPTION}
-                            </p>
+                            <p className={"hero-cta-caption"}>{CTA_CAPTION}</p>
                         </div>
                     </div>
+                    <style>{`
+.hero-cta-wrap {
+    margin-top: var(--_variable-spacing---component-spacing);
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.hero-cta-stack {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.hero-cta-caption {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--grey-body);
+    text-align: center;
+}
+@media (max-width: 991px) {
+    .hero-cta-wrap {
+        justify-content: center;
+        margin-bottom: 80px;
+    }
+}
+`}</style>
                 </div>
                 <figure
                     id={"w-node-ec06864a-af6d-d7ea-171d-6a7546e631f0-6ac5eb65"}
