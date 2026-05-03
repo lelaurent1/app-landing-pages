@@ -1,0 +1,11 @@
+.auto-tabs-component .w-tab-pane { opacity: 0; visibility: hidden; position: absolute; top: 0px; left: 0px; width: 100%; display: block !important; }
+.auto-tabs-component .w--tab-active { opacity: 1; visibility: visible; position: relative; z-index: 2; transition-delay: 0s; }
+.auto-tabs-description { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 0.8s, opacity 1s; }
+[data-auto-tabs="link"].w--current .auto-tabs-description { grid-template-rows: 1fr; opacity: 1; }
+[data-auto-tabs-button="play-icon"], [data-auto-tabs-button="pause-icon"] { transition: opacity 0.3s, transform 0.3s; transform: translateY(0.6rem); opacity: 0; }
+[data-auto-tabs-button="play"] [data-auto-tabs-button="pause-icon"] { opacity: 1; transform: translateY(0px); }
+[data-auto-tabs-button="pause"] [data-auto-tabs-button="play-icon"] { opacity: 1; transform: translateY(0px); }
+.auto-tabs-animate-from-right { transform: translateX(40%); opacity: 0; transition: transform 1.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s; }
+.auto-tabs-animate-from-left { transform: translateX(-40%); opacity: 0; transition: transform 1.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s; }
+.w-tab-pane.w--tab-active .auto-tabs-animate-from-right { transform: translateX(0px); opacity: 1; }
+.w-tab-pane.w--tab-active .auto-tabs-animate-from-left { transform: translateX(0px); opacity: 1; }
