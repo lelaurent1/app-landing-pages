@@ -12,6 +12,7 @@ import './styles/inline-style-6.css'
 import './styles/inline-style-7.css'
 
 import LogoStackSection from './LogoStackSection.tsx'
+import { CTA_TEXT, CTA_CAPTION } from '../../shared/cta.ts'
 
 
 // Component
@@ -30,18 +31,27 @@ import LogoStackSection from './LogoStackSection.tsx'
                     {logoSection}
                     <div className={"cta-build-campaign-wrap"}>
                         <button className={"cta-build-campaign"} type={"button"}>
-                            <span>Define Your Goals & Product</span>
+                            <span>{CTA_TEXT}</span>
                             <ArrowRight aria-hidden={"true"} size={22} strokeWidth={2.25} />
                         </button>
+                        <p className={"cta-build-campaign-caption"}>{CTA_CAPTION}</p>
                     </div>
                     <style>{`
 .cta-build-campaign-wrap {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     padding: 16px 20px;
     background-color: transparent;
     margin-top: auto;
     margin-bottom: auto;
+}
+.cta-build-campaign-caption {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--grey-body);
+    text-align: center;
 }
 .cta-build-campaign {
     width: 40vw;

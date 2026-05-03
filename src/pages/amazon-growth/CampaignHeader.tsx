@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import Img from './Img.tsx'
 import HeaderStat from './HeaderStat.tsx'
 import HeaderItals from '../../shared/HeaderItals.tsx'
+import { CTA_TEXT, CTA_CAPTION } from '../../shared/cta.ts'
 
 import catalogImg from '/assets/attachments/6971348d38d8897d26b5077d_4ee3bb8c26c55a470cc3b99eb9f528f1_catalog.webp'
 
@@ -41,7 +42,9 @@ function CampaignHeader() {
                         style={{
                             marginTop: "var(--_variable-spacing---component-spacing)",
                             display: "flex",
-                            justifyContent: "flex-start",
+                            flexDirection: "column",
+                            alignItems: "flex-start",
+                            gap: "10px",
                             width: "100%",
                         }}
                     >
@@ -57,9 +60,18 @@ function CampaignHeader() {
                                 fontSize: "1.05rem",
                             }}
                         >
-                            Define Your Goals &amp; Product
+                            {CTA_TEXT}
                             <ArrowRight size={22} strokeWidth={2} />
                         </a>
+                        <p
+                            style={{
+                                margin: 0,
+                                fontSize: "0.875rem",
+                                color: "var(--grey-body)",
+                            }}
+                        >
+                            {CTA_CAPTION}
+                        </p>
                     </div>
                 </div>
                 <figure
