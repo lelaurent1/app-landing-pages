@@ -42,36 +42,44 @@ function CampaignHeader() {
                         style={{
                             marginTop: "var(--_variable-spacing---component-spacing)",
                             display: "flex",
-                            flexDirection: "column",
-                            alignItems: "flex-start",
-                            gap: "10px",
+                            justifyContent: "flex-start",
                             width: "100%",
                         }}
                     >
-                        <a
-                            className={"button"}
+                        <div
                             style={{
-                                gap: "12px",
-                                cursor: "pointer",
-                                textDecoration: "none",
-                                height: "60px",
-                                paddingLeft: "34px",
-                                paddingRight: "34px",
-                                fontSize: "1.05rem",
+                                display: "inline-flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                gap: "10px",
                             }}
                         >
-                            {CTA_TEXT}
-                            <ArrowRight size={22} strokeWidth={2} />
-                        </a>
-                        <p
-                            style={{
-                                margin: 0,
-                                fontSize: "0.875rem",
-                                color: "var(--grey-body)",
-                            }}
-                        >
-                            {CTA_CAPTION}
-                        </p>
+                            <a
+                                className={"button"}
+                                style={{
+                                    gap: "12px",
+                                    cursor: "pointer",
+                                    textDecoration: "none",
+                                    height: "60px",
+                                    paddingLeft: "34px",
+                                    paddingRight: "34px",
+                                    fontSize: "1.05rem",
+                                }}
+                            >
+                                {CTA_TEXT}
+                                <ArrowRight size={22} strokeWidth={2} />
+                            </a>
+                            <p
+                                style={{
+                                    margin: 0,
+                                    fontSize: "0.875rem",
+                                    color: "var(--grey-body)",
+                                    textAlign: "center",
+                                }}
+                            >
+                                {CTA_CAPTION}
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <figure
