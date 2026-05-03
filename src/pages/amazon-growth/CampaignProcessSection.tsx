@@ -4,6 +4,7 @@ import type { JSX } from 'react/jsx-runtime'
 import { useLocation } from 'react-router-dom'
 import BoosterTab from './BoosterTab.tsx'
 import TabPane from './TabPane.tsx'
+import HeaderItals from '../../shared/HeaderItals.tsx'
 
 
 // Component
@@ -28,10 +29,7 @@ import TabPane from './TabPane.tsx'
                                     From product seeding to product growth
                                 </p>
                                 <div role={"group"} animate={"word"} className={"section-title"}>
-                                    From product seeding to
-                                    <span className={"header-itals"}>
-                                        product growth
-                                    </span>
+                                    From product seeding to<HeaderItals>product growth</HeaderItals>
                                 </div>
                             </div>
                             <div className={"auto-tabs w-tabs"}>

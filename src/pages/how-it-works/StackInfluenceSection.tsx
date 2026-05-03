@@ -4,6 +4,7 @@ import type { JSX } from 'react/jsx-runtime'
 import { useLocation, useNavigate } from 'react-router-dom'
 import AutoTab from './AutoTab.tsx'
 import AutoTabsPane from './AutoTabsPane.tsx'
+import HeaderItals from '../../shared/HeaderItals.tsx'
 
 
 // Auto-advance configuration: cycle from step 1 → step 5, then back to step 1
@@ -52,13 +53,7 @@ function normalizeStep(path: string): string {
                                 className={"section-title hero"}
                                 style={{ fontSize: "1.7rem" }}
                             >
-                                Stack Influence
-                                <span className={"mobile-break"}>
-                                </span>
-                                {" "}
-                                <span className={"header-itals"}>
-                                    how it works
-                                </span>
+                                Stack Influence<span className={"mobile-break"}></span><HeaderItals>how it works</HeaderItals>
                             </p>
                         </div>
                         <div className={"auto-tabs-component"}>

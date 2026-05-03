@@ -3,6 +3,7 @@ import type { JSX } from 'react/jsx-runtime'
 
 import { useLocation } from 'react-router-dom'
 import LogoBanner from '../../shared/LogoBanner.tsx'
+import HeaderItals from '../../shared/HeaderItals.tsx'
 import Img from './Img.tsx'
 import BenefitsSection from './BenefitsSection.tsx'
 import CampaignProcessSection from './CampaignProcessSection.tsx'
@@ -44,11 +45,7 @@ const LOGO_IDS = Array.from({ length: 30 }, (_, i) => String(i + 3))
                                             animate={"word scroll"}
                                             className={"section-title"}
                                         >
-                                            Trusted by
-                                            <span className={"header-itals"}>
-                                                thousands
-                                            </span>
-                                            of eCommerce brands
+                                            Trusted by<HeaderItals>thousands</HeaderItals>of eCommerce brands
                                         </div>
                                     </div>
                                     <a className={"button w-variant-c9f11e0e-c163-0ada-5fbc-21bd82715afe w-button"}>

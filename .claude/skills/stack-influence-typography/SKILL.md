@@ -45,7 +45,30 @@ Constraints:
 - The italic must be the *meaningful* word, not a connector ("on", "with", "for" should stay Inter Tight).
 - The Inter Tight portion must be the **majority** of the header.
 
-When wrapping the highlight in JSX, use `<span className="header-itals">word</span>`.
+### Always use `<HeaderItals>` — never the raw span
+
+Use the shared component at [src/shared/HeaderItals.tsx](src/shared/HeaderItals.tsx):
+
+```tsx
+import HeaderItals from '../../shared/HeaderItals.tsx'
+
+<h1>Automate influencers for<HeaderItals>Amazon listing growth</HeaderItals></h1>
+<div>Trusted by<HeaderItals>thousands</HeaderItals>of eCommerce brands</div>
+```
+
+The component adds a single space before the `<span className="header-itals">` and another after. Do **not** add `{' '}` yourself when using `<HeaderItals>` — the component already handles spacing on both sides.
+
+**Why a component, not a raw span?** JSX collapses line breaks between adjacent text and elements to **nothing** (not whitespace). So this:
+
+```tsx
+Trusted by
+<span className="header-itals">thousands</span>
+of eCommerce brands
+```
+
+renders as `Trusted bythousandsof eCommerce brands`. The `.header-itals` CSS adds 0.2rem padding which is too small to read as a word break, so the visual is broken. The `<HeaderItals>` component bakes the spaces in so you can't forget.
+
+If you ever see a headline rendering with words mashed together around an italic, search for `className="header-itals"` (raw span usage) and replace with `<HeaderItals>`.
 
 ## Where these rules live in the codebase
 

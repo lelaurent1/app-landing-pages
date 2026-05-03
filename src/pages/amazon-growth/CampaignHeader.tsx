@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import Img from './Img.tsx'
 import HeaderStat from './HeaderStat.tsx'
+import HeaderItals from '../../shared/HeaderItals.tsx'
 
 import catalogImg from '/assets/attachments/6971348d38d8897d26b5077d_4ee3bb8c26c55a470cc3b99eb9f528f1_catalog.webp'
 
@@ -20,10 +21,7 @@ function CampaignHeader() {
                         <Img id="2" />
                     </div>
                     <h1 className={"page-title"}>
-                        Automate influencers for
-                        <span className={"header-itals"}>
-                            Amazon listing growth
-                        </span>
+                        Automate influencers for<HeaderItals>Amazon listing growth</HeaderItals>
                     </h1>
                     <p>
                         Find, connect and automate amazon influencer relationships at scale to help you launch new products, gather UGC, increase reviews, grow sales, and become a top listing on Amazon.
