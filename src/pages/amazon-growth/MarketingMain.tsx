@@ -1,7 +1,6 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
-import { useLocation } from 'react-router-dom'
 import LogoBanner from '../../shared/LogoBanner.tsx'
 import HeaderItals from '../../shared/HeaderItals.tsx'
 import Img from './Img.tsx'
@@ -16,7 +15,6 @@ const LOGO_IDS = Array.from({ length: 30 }, (_, i) => String(i + 3))
 // Component
 
         function MarketingMain() {
-            const location = useLocation();
 
             return (
                 <main>
@@ -60,31 +58,7 @@ const LOGO_IDS = Array.from({ length: 30 }, (_, i) => String(i + 3))
                                         className={"splide__track"}
                                         id={"stories-track"}
                                     >
-                                        {(() => {
-                                            switch (
-                                                location.pathname +
-                                                location.search +
-                                                location.hash
-                                            ) {
-                                                case "/amazon-growth/g-find-amazon-influencers-test":
-                                                case "/amazon-growth/g-find-amazon-influencers-test?step=2":
-                                                    return (
-                                                        <StoriesSlider
-                                                            slide1Width="20%"
-                                                            slide2Width="60%"
-                                                        />
-                                                    );
-                                                case "/amazon-growth/g-find-amazon-influencers-test?step=3":
-                                                    return (
-                                                        <StoriesSlider
-                                                            slide1Width="60%"
-                                                            slide2Width="20%"
-                                                        />
-                                                    );
-                                                default:
-                                                    return null;
-                                            }
-                                        })()}
+                                        <StoriesSlider />
                                     </div>
                                     <ul
                                         className={"splide__pagination"}
