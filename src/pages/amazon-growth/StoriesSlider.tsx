@@ -46,7 +46,6 @@ function StorySlide({
         <div
             className={slideClass}
             id={slideId}
-            style={{ height: '495px' }}
             onMouseEnter={onMouseEnter}
         >
             <div role={"list"} className={"story-wrapper w-dyn-items"}>
