@@ -50,7 +50,7 @@ blockquote { margin-top: var(--_variable-spacing---component-spacing); margin-bo
 .button.outline.red:hover { background-color: var(--secondary-darker); color: var(--background-paper); }
 .button.outline.purple { border-color: var(--p-darker); color: var(--p-darker); }
 .button.outline.purple:hover { color: var(--background-paper); }
-.preheader { width: 100%; font-family: var(--body-type); color: var(--text); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 0px; font-size: 0.7rem; font-weight: 500; line-height: 1.2em; text-decoration: none; }
+.preheader { width: 100%; font-family: var(--body-type); color: var(--text); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0px; font-size: 0.7rem; font-weight: 500; line-height: 1.2em; text-decoration: none; }
 .preheader:where(.w-variant-7932c302-8e6a-d22c-52c7-057caf9778db) { color: var(--text); }
 .preheader:where(.w-variant-efcb349f-3e1e-d14e-214b-dd88c3b81ecd) { text-align: center; max-width: none; }
 .preheader.centered { text-align: center; margin-bottom: 10px; }

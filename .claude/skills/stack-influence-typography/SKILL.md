@@ -12,7 +12,7 @@ Two typefaces, four roles. Never introduce a third typeface or a different itali
 | Role | Typeface | Weight | Style | Size | Letter-spacing | Case |
 |---|---|---|---|---|---|---|
 | **Main headers** (h1, h2, `.section-title`) | Inter Tight | 500 (Medium) | Roman | as designed | -1% (`-0.01em`) | Sentence case |
-| **Overlines** (`.preheader`) | Inter Tight | 500 (Medium) | Roman | small | 30% (`0.3em`) | ALL CAPS |
+| **Overlines** (`.preheader`) | Inter Tight | 500 (Medium) | Roman | small | 18% (`0.18em`) | ALL CAPS |
 | **Text highlight** (`.header-itals`) | Instrument Serif | 400 | Italic | parent + 2px (`calc(1em + 2px)`) | inherits | mixed |
 | **Paragraphs** (body, `.autotab-copy`) | Inter Tight | 300 (Light) | Roman | 16px | normal | sentence case |
 
@@ -93,7 +93,7 @@ Verify with `document.fonts.check('400 16px Instrumentserif')` — should return
 
 - **Don't bump body to `font-weight: 400`** based on the brand deck's "Regular" label. The visual reference is Light (300). 400 was tried and rejected as too heavy.
 - **Don't use `font-weight: 400`** for h1/h2 — the brand calls for Medium (500). The site looked too thin before this was fixed.
-- **Don't use `letter-spacing: 0.1rem`** on `.preheader` — that's ~14% at 0.7rem font-size. The spec is 30% (`0.3em`).
+- **Don't use `letter-spacing: 0.1rem`** on `.preheader` — that's ~14% at 0.7rem font-size. Use `0.18em` (the brand deck specifies 30% but the visual reference reads tighter; 0.18em was approved as the actual look).
 - **Don't use multiplicative sizing** (`1.07em`) for `.header-itals` — the spec is additive `+2px`. Use `calc(1em + 2px)`.
 - **Don't bold an italic highlight** (`font-weight: 700` on `.header-itals`). The italic is the emphasis; weight stays at 400.
 - **Don't use `text-transform: uppercase`** anywhere except `.preheader` overlines. Headlines and body are sentence case.
