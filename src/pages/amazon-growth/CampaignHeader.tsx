@@ -62,16 +62,19 @@ function CampaignHeader() {
                         </a>
                     </div>
                 </div>
-                <div
+                <figure
                     id={"w-node-ec06864a-af6d-d7ea-171d-6a7546e631f0-6ac5eb65"}
                     className={"div-block-36"}
                     style={{
+                        margin: 0,
                         padding: 0,
                         border: "none",
                         background: "transparent",
                         display: "flex",
+                        flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
+                        gap: "14px",
                     }}
                 >
                     <img
@@ -85,7 +88,19 @@ function CampaignHeader() {
                             boxShadow: "0 12px 40px rgba(20, 26, 33, 0.08)",
                         }}
                     />
-                </div>
+                    <figcaption
+                        style={{
+                            margin: 0,
+                            fontSize: "0.875rem",
+                            color: "var(--grey-body)",
+                            textAlign: "center",
+                            maxWidth: "90%",
+                            lineHeight: 1.4,
+                        }}
+                    >
+                        How vetted creators browse and apply to your campaigns.
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </header>}
