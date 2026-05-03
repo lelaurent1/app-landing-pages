@@ -21,7 +21,7 @@ function LogoBanner({
   imgIds,
   ImgComponent,
   heading,
-  marqueeDurationSeconds = 46,
+  marqueeDurationSeconds = 55,
 }: LogoBannerProps) {
   const logoStrip = (
     <ul role="list" className="publication-logos" style={{ gap: `${LOGO_GAP}px` }}>
