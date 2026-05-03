@@ -14,7 +14,7 @@ Two typefaces, four roles. Never introduce a third typeface or a different itali
 | **Main headers** (h1, h2, `.section-title`) | Inter Tight | 500 (Medium) | Roman | as designed | -1% (`-0.01em`) | Sentence case |
 | **Overlines** (`.preheader`) | Inter Tight | 500 (Medium) | Roman | small | 30% (`0.3em`) | ALL CAPS |
 | **Text highlight** (`.header-itals`) | Instrument Serif | 400 | Italic | parent + 2px (`calc(1em + 2px)`) | inherits | mixed |
-| **Paragraphs** (body, `.autotab-copy`) | Inter Tight | 400 (Regular) | Roman | 16px | normal | sentence case |
+| **Paragraphs** (body, `.autotab-copy`) | Inter Tight | 300 (Light) | Roman | 16px | normal | sentence case |
 
 CSS variables already defined in `:root`:
 - `--primary-type: Intertight, Arial, sans-serif`
@@ -29,7 +29,9 @@ Only these are bundled in `public/fonts/` — do not reference others without ad
 - **Inter Tight**: 300, 400, 500 (each in normal + italic)
 - **Instrument Serif**: 400 normal, 400 italic
 
-Requesting weight 700 or 600 will fall back and look wrong. Use 500 for Medium, 400 for Regular.
+Requesting weight 700 or 600 will fall back and look wrong. Use 500 for Medium, 300 for body Light.
+
+**Naming gotcha:** the brand deck labels paragraphs "Inter Tight Regular," but the *visual reference* in the deck and approved screenshots renders at weight **300 (Light)**, not 400. We match the visual, not the label. Do not "correct" body weight to 400 based on the word "Regular" alone — confirm with a side-by-side against the reference if in doubt.
 
 ## The headline highlight rule
 
@@ -89,7 +91,7 @@ Verify with `document.fonts.check('400 16px Instrumentserif')` — should return
 
 ## Common mistakes to avoid
 
-- **Don't use `font-weight: 300`** for body text — that's Light, not Regular. The brand is 400.
+- **Don't bump body to `font-weight: 400`** based on the brand deck's "Regular" label. The visual reference is Light (300). 400 was tried and rejected as too heavy.
 - **Don't use `font-weight: 400`** for h1/h2 — the brand calls for Medium (500). The site looked too thin before this was fixed.
 - **Don't use `letter-spacing: 0.1rem`** on `.preheader` — that's ~14% at 0.7rem font-size. The spec is 30% (`0.3em`).
 - **Don't use multiplicative sizing** (`1.07em`) for `.header-itals` — the spec is additive `+2px`. Use `calc(1em + 2px)`.
@@ -100,7 +102,7 @@ Verify with `document.fonts.check('400 16px Instrumentserif')` — should return
 
 In the browser dev tools (or via `getComputedStyle`):
 
-- [ ] `body` font-weight is `400`
+- [ ] `body` font-weight is `300` (Light — not 400, despite the brand deck label saying "Regular")
 - [ ] `h1`, `h2`, `.section-title` font-weight is `500` and letter-spacing is `-0.272px` (1% of 27.2px) or equivalent for the size
 - [ ] `.preheader` letter-spacing is `0.3em` of its font-size
 - [ ] `.header-itals` is italic, weight 400, and ~2px larger than its parent
