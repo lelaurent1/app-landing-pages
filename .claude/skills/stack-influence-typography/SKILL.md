@@ -56,6 +56,14 @@ Both pages have their own copy of the typography (Webflow exports). Keep them in
 
 If you change a value in one, change it in the other. (One day, lift to a shared `src/styles/typography.css` — not done yet because the rest of stylesheet_0 differs per page.)
 
+## Font path gotcha
+
+The `@font-face` declarations live in `stylesheet_1.css` for both pages. Their `src` URLs **must be absolute** (`url("/fonts/...ttf")`) because the CSS file lives at `src/pages/<page>/styles/` and the fonts live at `public/fonts/` (served at `/fonts/`).
+
+If you ever see the page rendering in Times New Roman instead of Instrument Serif, the @font-face URLs were probably written as relative paths (`url("fonts/...")`) — the browser then tries to resolve them next to the CSS file, gets Vite's SPA fallback (HTML with 200 OK), and silently fails to load the font. The CSS rules still apply weights/sizes, but the font family falls back to the next family in the stack (Times New Roman).
+
+Verify with `document.fonts.check('400 16px Instrumentserif')` — should return `true`.
+
 ## Common mistakes to avoid
 
 - **Don't use `font-weight: 300`** for body text — that's Light, not Regular. The brand is 400.

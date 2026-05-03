@@ -375,10 +375,10 @@ textarea.w-input, textarea.w-select { height: auto; }
 .w-dyn-empty { background-color: rgb(221, 221, 221); padding: 10px; }
 .w-dyn-hide, .w-dyn-bind-empty, .w-condition-invisible { display: none !important; }
 .wf-layout-layout { display: grid; }
-@font-face { font-family: Instrumentserif; src: url("fonts/098fc628-9405-4083-a3b4-e57d31f1fdc9.ttf") format("truetype"); font-weight: 400; font-style: italic; }
-@font-face { font-family: Instrumentserif; src: url("fonts/fe8083d8-260e-4ce0-a13e-2cdd50f48ad5.ttf") format("truetype"); font-weight: 400; font-style: normal; }
-@font-face { font-family: Intertight; src: url("fonts/1504d0fc-9801-401c-bb46-392afbbc3d9e.ttf") format("truetype"); font-weight: 300; font-style: italic; }
-@font-face { font-family: Intertight; src: url("fonts/da79e4f5-1e47-482b-9b05-5cf4f13115a0.ttf") format("truetype"); font-weight: 400; font-style: italic; }
-@font-face { font-family: Intertight; src: url("fonts/6c58fad4-443f-4d40-a151-adc5de2db221.ttf") format("truetype"); font-weight: 500; font-style: normal; }
-@font-face { font-family: Intertight; src: url("fonts/dcc6b1ea-81a3-4faf-9ddd-8c0e0d866b4b.ttf") format("truetype"); font-weight: 400; font-style: normal; }
-@font-face { font-family: Intertight; src: url("fonts/1f86ffc0-4a59-4657-af62-9661e1da2b5f.ttf") format("truetype"); font-weight: 300; font-style: normal; }
+@font-face { font-family: Instrumentserif; src: url("/fonts/098fc628-9405-4083-a3b4-e57d31f1fdc9.ttf") format("truetype"); font-weight: 400; font-style: italic; }
+@font-face { font-family: Instrumentserif; src: url("/fonts/fe8083d8-260e-4ce0-a13e-2cdd50f48ad5.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: Intertight; src: url("/fonts/1504d0fc-9801-401c-bb46-392afbbc3d9e.ttf") format("truetype"); font-weight: 300; font-style: italic; }
+@font-face { font-family: Intertight; src: url("/fonts/da79e4f5-1e47-482b-9b05-5cf4f13115a0.ttf") format("truetype"); font-weight: 400; font-style: italic; }
+@font-face { font-family: Intertight; src: url("/fonts/6c58fad4-443f-4d40-a151-adc5de2db221.ttf") format("truetype"); font-weight: 500; font-style: normal; }
+@font-face { font-family: Intertight; src: url("/fonts/dcc6b1ea-81a3-4faf-9ddd-8c0e0d866b4b.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: Intertight; src: url("/fonts/1f86ffc0-4a59-4657-af62-9661e1da2b5f.ttf") format("truetype"); font-weight: 300; font-style: normal; }
