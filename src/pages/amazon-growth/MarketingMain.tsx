@@ -2,48 +2,28 @@ import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
 import { useLocation } from 'react-router-dom'
-import PublicationLogos from './PublicationLogos.tsx'
+import LogoBanner from '../../shared/LogoBanner.tsx'
+import Img from './Img.tsx'
 import BenefitsSection from './BenefitsSection.tsx'
 import CampaignProcessSection from './CampaignProcessSection.tsx'
 import StoriesSlider from './StoriesSlider.tsx'
+
+const LOGO_IDS = Array.from({ length: 30 }, (_, i) => String(i + 3))
 
 
     
 // Component
 
-        function MarketingMain({
-            carouselTranslate
-        }: {
-            carouselTranslate: string;
-        }) {
+        function MarketingMain() {
             const location = useLocation();
 
             return (
                 <main>
-                    <div className={"section-logo-wrap"}>
-                        <div className={"div-block-19"}>
-                            <div className={"container-regular"}>
-                                <h2 className={"preheader"}>
-                                    Trusted by top & up-and-coming brands
-                                </h2>
-                            </div>
-                        </div>
-                        <div className={"carousel-2 transparent-5"}>
-                            <div
-                                className={"logo-carousel-wrap"}
-                                style={{
-                                    translate: "none",
-                                    rotate: "none",
-                                    scale: "none",
-                                    transform: `perspective(1px) translate3d(${carouselTranslate}, 0px, 0px)`
-                                }}
-                            >
-                                <PublicationLogos />
-                                <PublicationLogos />
-                                <PublicationLogos />
-                            </div>
-                        </div>
-                    </div>
+                    <LogoBanner
+                        imgIds={LOGO_IDS}
+                        ImgComponent={Img}
+                        heading="Trusted by top & up-and-coming brands"
+                    />
                     <div>
                         <BenefitsSection dataId="0" />
                     </div>

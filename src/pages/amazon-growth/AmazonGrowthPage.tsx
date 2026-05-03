@@ -31,18 +31,7 @@ import MarketingMain from './MarketingMain.tsx'
                         </div>
                     </div>
                     <CampaignHeader />
-                    {(() => {
-                        switch (location.pathname + location.search + location.hash) {
-                            case "/amazon-growth/g-find-amazon-influencers-test":
-                                return <MarketingMain carouselTranslate="-20.1755%" />;
-                            case "/amazon-growth/g-find-amazon-influencers-test?step=2":
-                                return <MarketingMain carouselTranslate="-23.1577%" />;
-                            case "/amazon-growth/g-find-amazon-influencers-test?step=3":
-                                return <MarketingMain carouselTranslate="-28.2718%" />;
-                            default:
-                                return null;
-                        }
-                    })()}
+                    <MarketingMain />
                     <SiteFooter
                         year={2026}
                         companyName="Stack Influence Inc"
