@@ -29,7 +29,7 @@ function LogoBanner({
   return (
     <div
       className="section-logo-wrap"
-      style={{ marginTop: '20px', marginBottom: '20px', rowGap: '16px' }}
+      style={{ marginTop: '16px', marginBottom: '16px', rowGap: '16px' }}
     >
       {heading && (
         <div className="div-block-19">
