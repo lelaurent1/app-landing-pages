@@ -7,13 +7,12 @@ import AutoTabsPane from './AutoTabsPane.tsx'
 import HeaderItals from '../../shared/HeaderItals.tsx'
 
 
-// Auto-advance configuration: cycle from step 1 → step 5, then back to step 1
-const STEP_CYCLE = ["/", "/?step=2", "/?step=3", "/?step=4", "/?step=5"] as const;
+// Auto-advance configuration: cycle through steps using relative search params
+const STEP_SEARCHES = ["", "?step=2", "?step=3", "?step=4", "?step=5"] as const;
 const CYCLE_MS = 5000;
 
-// Treat "/?step=7" (the alt-step-1 route) as equivalent to "/" for cycling purposes
-function normalizeStep(path: string): string {
-    return path === "/?step=7" ? "/" : path;
+function normalizeSearch(search: string): string {
+    return search === "?step=7" ? "" : search;
 }
 
 // Component
@@ -21,18 +20,17 @@ function normalizeStep(path: string): string {
         function StackInfluenceSection() {
             const location = useLocation();
             const navigate = useNavigate();
-            const current = location.pathname + location.search + location.hash;
-            const normalized = normalizeStep(current);
+            const search = normalizeSearch(location.search);
 
             useEffect(() => {
-                const idx = STEP_CYCLE.findIndex((r) => r === normalized);
+                const idx = STEP_SEARCHES.indexOf(search as typeof STEP_SEARCHES[number]);
                 if (idx === -1) return;
-                const nextRoute = STEP_CYCLE[(idx + 1) % STEP_CYCLE.length];
+                const nextSearch = STEP_SEARCHES[(idx + 1) % STEP_SEARCHES.length];
                 const timer = window.setTimeout(() => {
-                    navigate(nextRoute);
+                    navigate(nextSearch || location.pathname, { replace: true });
                 }, CYCLE_MS);
                 return () => window.clearTimeout(timer);
-            }, [normalized, navigate]);
+            }, [search, navigate, location.pathname]);
 
             return (
                 <section className={"section-tabs-autoplay"} style={{ paddingTop: "24px", paddingBottom: "24px" }}>
