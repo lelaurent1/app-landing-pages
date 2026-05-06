@@ -114,6 +114,15 @@ function CampaignHeader() {
     .hero-cta-wrap {
         display: none;
     }
+    .hero-figcaption {
+        white-space: nowrap;
+        max-width: none !important;
+    }
+    .div-block-37 {
+        padding-top: 52px;
+        padding-bottom: 0;
+        margin-bottom: -22px;
+    }
 }
 `}</style>
                 </div>
@@ -144,6 +153,7 @@ function CampaignHeader() {
                         }}
                     />
                     <figcaption
+                        className={"hero-figcaption"}
                         style={{
                             margin: 0,
                             fontSize: "0.875rem",
