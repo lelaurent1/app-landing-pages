@@ -40,21 +40,10 @@ function CampaignHeader() {
                     </div>
                     <div className={"hero-cta-wrap"}>
                         <div className={"hero-cta-stack"}>
-                            <a
-                                className={"button"}
-                                style={{
-                                    gap: "12px",
-                                    cursor: "pointer",
-                                    textDecoration: "none",
-                                    height: "60px",
-                                    paddingLeft: "34px",
-                                    paddingRight: "34px",
-                                    fontSize: "1.05rem",
-                                }}
-                            >
-                                {CTA_TEXT}
-                                <ArrowRight size={22} strokeWidth={2} />
-                            </a>
+                            <button className={"cta-build-campaign"} type={"button"}>
+                                <span>{CTA_TEXT}</span>
+                                <ArrowRight aria-hidden={"true"} size={22} strokeWidth={2.25} />
+                            </button>
                             <p className={"hero-cta-caption"}>{CTA_CAPTION}</p>
                         </div>
                     </div>
@@ -77,10 +66,53 @@ function CampaignHeader() {
     color: var(--grey-body);
     text-align: center;
 }
+.cta-build-campaign {
+    width: 40vw;
+    min-height: 64px;
+    padding: 18px 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: inherit;
+    font-size: 1.21rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    color: var(--background-paper, #ffffff);
+    background-color: var(--p-main);
+    border: none;
+    border-radius: var(--button-radius, 999px);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.05s ease;
+    box-shadow: 0 4px 16px rgba(133, 81, 245, 0.25);
+}
+.cta-build-campaign > svg {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+.cta-build-campaign:hover > svg {
+    transform: translateX(3px);
+}
+.cta-build-campaign:hover {
+    background-color: var(--untitled-ui--primary800);
+}
+.cta-build-campaign:active {
+    background-color: var(--p-darker);
+}
 @media (max-width: 991px) {
     .hero-cta-wrap {
         justify-content: center;
         margin-bottom: 80px;
+    }
+    .cta-build-campaign {
+        width: auto;
+        padding: 18px 34px;
+    }
+}
+@media (max-width: 768px) {
+    .hero-cta-wrap {
+        display: none;
     }
 }
 `}</style>

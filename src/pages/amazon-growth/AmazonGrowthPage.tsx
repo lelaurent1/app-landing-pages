@@ -11,10 +11,12 @@ import './styles/inline-style-6.css'
 import './styles/inline-style-7.css'
 
 import { useLocation } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 import Img from './Img.tsx'
 import CampaignHeader from './CampaignHeader.tsx'
 import SiteFooter from './SiteFooter.tsx'
 import MarketingMain from './MarketingMain.tsx'
+import { CTA_TEXT, CTA_CAPTION } from '../../shared/cta.ts'
 
 
 // Component
@@ -37,6 +39,55 @@ import MarketingMain from './MarketingMain.tsx'
                         companyName="Stack Influence Inc"
                         address="111 NE 1st St, Miami, FL 33132"
                     />
+                    <div className={"cta-build-campaign-wrap"}>
+                        <button className={"cta-build-campaign"} type={"button"}>
+                            <span>{CTA_TEXT}</span>
+                            <ArrowRight aria-hidden={"true"} size={22} strokeWidth={2.25} />
+                        </button>
+                        <p className={"cta-build-campaign-caption"}>{CTA_CAPTION}</p>
+                    </div>
+                    <style>{`
+.cta-build-campaign-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    background-color: transparent;
+}
+.cta-build-campaign-caption {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--grey-body);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 96px;
+    }
+    .cta-build-campaign-wrap {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+        background-color: var(--background-paper, #ffffff);
+        border-top: 1px solid var(--divider);
+        z-index: 100;
+        box-shadow: 0 -4px 16px rgba(20, 26, 33, 0.06);
+    }
+    .cta-build-campaign {
+        width: 100%;
+        min-height: 56px;
+        border-radius: var(--sm-radius, 12px);
+    }
+}
+@media (min-width: 769px) {
+    .cta-build-campaign-wrap {
+        display: none;
+    }
+}
+`}</style>
                     <div
                         id={"Botsonic-wrapper"}
                         style={{
