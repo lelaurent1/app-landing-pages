@@ -75,7 +75,8 @@ function App() {
         <Router>
             <Suspense fallback={null}>
                 <Routes>
-                    <Route path="/amazon-growth/g-find-amazon-influencers-test" element={<AmazonGrowthPage />} />
+                    <Route path="/amazon-asin-launch-1" element={<HomePage />} />
+                    <Route path="/amazon-asin-launch-2" element={<AmazonGrowthPage />} />
                     <Route path="*" element={<HomePage />} />
                 </Routes>
             </Suspense>
