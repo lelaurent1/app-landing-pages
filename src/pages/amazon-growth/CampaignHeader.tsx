@@ -7,6 +7,7 @@ import Img from './Img.tsx'
 import HeaderStat from './HeaderStat.tsx'
 import HeaderItals from '../../shared/HeaderItals.tsx'
 import { CTA_TEXT, CTA_CAPTION } from '../../shared/cta.ts'
+import { buildCampaignUrl } from '../../shared/email.ts'
 
 import catalogImg from '/assets/attachments/6971348d38d8897d26b5077d_4ee3bb8c26c55a470cc3b99eb9f528f1_catalog.webp'
 
@@ -40,10 +41,15 @@ function CampaignHeader() {
                     </div>
                     <div className={"hero-cta-wrap"}>
                         <div className={"hero-cta-stack"}>
-                            <button className={"cta-build-campaign"} type={"button"}>
+                            <a
+                                className={"cta-build-campaign"}
+                                href={buildCampaignUrl()}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <span>{CTA_TEXT}</span>
                                 <ArrowRight aria-hidden={"true"} size={22} strokeWidth={2.25} />
-                            </button>
+                            </a>
                             <p className={"hero-cta-caption"}>{CTA_CAPTION}</p>
                         </div>
                     </div>

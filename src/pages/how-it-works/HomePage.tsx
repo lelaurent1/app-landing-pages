@@ -13,6 +13,7 @@ import './styles/inline-style-7.css'
 
 import LogoStackSection from './LogoStackSection.tsx'
 import { CTA_TEXT, CTA_CAPTION } from '../../shared/cta.ts'
+import { buildCampaignUrl } from '../../shared/email.ts'
 
 
 // Component
@@ -30,10 +31,15 @@ import { CTA_TEXT, CTA_CAPTION } from '../../shared/cta.ts'
                     </div>
                     {logoSection}
                     <div className={"cta-build-campaign-wrap"}>
-                        <button className={"cta-build-campaign"} type={"button"}>
+                        <a
+                            className={"cta-build-campaign"}
+                            href={buildCampaignUrl()}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <span>{CTA_TEXT}</span>
                             <ArrowRight aria-hidden={"true"} size={22} strokeWidth={2.25} />
-                        </button>
+                        </a>
                         <p className={"cta-build-campaign-caption"}>{CTA_CAPTION}</p>
                     </div>
                     <style>{`
