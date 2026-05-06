@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { track } from '../../lib/analytics.ts'
 
 type BoosterTabData = {
     stepNumber: number;
@@ -29,6 +30,7 @@ function BoosterTab({
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()
+        track('Process Tab Clicked', { page: 'page-2', step: stepNumber })
         navigate(searchParam || location.pathname, { replace: true })
     }
 

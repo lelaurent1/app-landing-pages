@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import Img from './Img.tsx'
 import CaseStatNumber from './CaseStatNumber.tsx'
 import StatBodyCopy from './StatBodyCopy.tsx'
+import { track } from '../../lib/analytics.ts'
 
 
         type StoryCardData = {
@@ -44,6 +45,7 @@ import StatBodyCopy from './StatBodyCopy.tsx'
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => track('Story Card Clicked', { brand, target_url: url })}
                     {...(hasTabIndex ? { tabIndex: "-1" } : {})}
                 >
                     <div className={`testimonials-01-image-box ${imageVariant}`}>

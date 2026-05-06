@@ -16,14 +16,22 @@ import Img from './Img.tsx'
 import CampaignHeader from './CampaignHeader.tsx'
 import SiteFooter from './SiteFooter.tsx'
 import MarketingMain from './MarketingMain.tsx'
+import { useEffect } from 'react'
 import { CTA_TEXT, CTA_CAPTION } from '../../shared/cta.ts'
 import { buildCampaignUrl } from '../../shared/email.ts'
+import { track } from '../../lib/analytics.ts'
 
 
 // Component
 
         function AmazonGrowthPage() {
             const location = useLocation();
+            const ctaUrl = buildCampaignUrl();
+
+            useEffect(() => {
+                track('Page Viewed', { page: 'page-2' });
+            }, []);
+
             return (
                 <body>
                     <div className={"div-block-37"}>
@@ -43,9 +51,10 @@ import { buildCampaignUrl } from '../../shared/email.ts'
                     <div className={"cta-build-campaign-wrap"}>
                         <a
                             className={"cta-build-campaign"}
-                            href={buildCampaignUrl()}
+                            href={ctaUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => track('Build Campaign CTA Clicked', { placement: 'page-2-mobile-sticky', target_url: ctaUrl })}
                         >
                             <span>{CTA_TEXT}</span>
                             <ArrowRight aria-hidden={"true"} size={22} strokeWidth={2.25} />

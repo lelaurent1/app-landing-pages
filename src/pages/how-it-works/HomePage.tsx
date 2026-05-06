@@ -11,9 +11,11 @@ import './styles/inline-style-5.css'
 import './styles/inline-style-6.css'
 import './styles/inline-style-7.css'
 
+import { useEffect } from 'react'
 import LogoStackSection from './LogoStackSection.tsx'
 import { CTA_TEXT, CTA_CAPTION } from '../../shared/cta.ts'
 import { buildCampaignUrl } from '../../shared/email.ts'
+import { track } from '../../lib/analytics.ts'
 
 
 // Component
@@ -22,6 +24,11 @@ import { buildCampaignUrl } from '../../shared/email.ts'
             // The logo carousel now auto-scrolls horizontally (continuous marquee)
             // independent of the active step, so we no longer pick a per-step transform.
             const logoSection = <LogoStackSection />;
+            const ctaUrl = buildCampaignUrl();
+
+            useEffect(() => {
+                track('Page Viewed', { page: 'page-1' });
+            }, []);
 
             return (
                 <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
@@ -33,9 +40,10 @@ import { buildCampaignUrl } from '../../shared/email.ts'
                     <div className={"cta-build-campaign-wrap"}>
                         <a
                             className={"cta-build-campaign"}
-                            href={buildCampaignUrl()}
+                            href={ctaUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => track('Build Campaign CTA Clicked', { placement: 'page-1-hero', target_url: ctaUrl })}
                         >
                             <span>{CTA_TEXT}</span>
                             <ArrowRight aria-hidden={"true"} size={22} strokeWidth={2.25} />

@@ -1,7 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './shared/email.ts'
+import { initialEmail } from './shared/email.ts'
+import { initAnalytics, identifyVisitor } from './lib/analytics.ts'
 import App from './App.tsx'
+
+initAnalytics()
+if (initialEmail) identifyVisitor(initialEmail)
 
 // Strip step query/hash on load *only* for the how-it-works page so the
 // auto-advancing carousel always starts at "Define Your Goals & Product".

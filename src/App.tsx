@@ -1,8 +1,20 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { track } from './lib/analytics.ts'
 
 const HomePage = lazy(() => import('./pages/how-it-works/HomePage.tsx'))
 const AmazonGrowthPage = lazy(() => import('./pages/amazon-growth/AmazonGrowthPage.tsx'))
+
+// Map an AutoTab route (e.g. "/?step=2") to the step number for analytics.
+function stepFromRoute(route: string): number {
+    const match = route.match(/step=(\d+)/)
+    if (match) {
+        const n = parseInt(match[1], 10)
+        // step=7 is the alt-step-1 sentinel used by AutoTab data.
+        return n === 7 ? 1 : n
+    }
+    return 1
+}
 
 function pushPath(path: string) {
   window.history.pushState(null, '', '' + path)
@@ -60,6 +72,10 @@ document.addEventListener(
         }
 
         if (Array.isArray(routes) && routes.every((x) => typeof x === 'string')) {
+            const route = (routes as string[])[0]
+            if (route) {
+                track('Process Tab Clicked', { page: 'page-1', step: stepFromRoute(route) })
+            }
             navigateToNext(routes as string[])
             e.preventDefault()
             return
