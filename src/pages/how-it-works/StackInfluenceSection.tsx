@@ -21,6 +21,10 @@ function normalizeSearch(search: string): string {
             const location = useLocation();
             const navigate = useNavigate();
             const search = normalizeSearch(location.search);
+            // `current` is used in switch cases below to pick the active tab.
+            // We compose it from "/" + search so the existing cases (e.g. "/?step=2") still match
+            // regardless of the actual pathname (works under "/" or "/amazon-asin-launch-1").
+            const current = search ? `/${search}` : "/";
 
             useEffect(() => {
                 const idx = STEP_SEARCHES.indexOf(search as typeof STEP_SEARCHES[number]);
