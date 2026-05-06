@@ -1,9 +1,10 @@
 import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 type BoosterTabData = {
     stepNumber: number;
     title: string;
-    navigateRoutes: string[];
+    searchParam: string;
 }
 
 function BoosterTab({
@@ -17,12 +18,19 @@ function BoosterTab({
     progressMs?: number;
     id: string;
 }) {
-    const { stepNumber, title, navigateRoutes }: BoosterTabData = getBoosterTabData(dataId)
+    const { stepNumber, title, searchParam }: BoosterTabData = getBoosterTabData(dataId)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const progressBarStyle: React.CSSProperties =
         isActive && progressMs
             ? { animation: `boosterTabProgress ${progressMs}ms linear forwards` }
             : { width: '0%' }
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault()
+        navigate(searchParam || location.pathname, { replace: true })
+    }
 
     return (
         <a
@@ -30,7 +38,7 @@ function BoosterTab({
             id={id}
             role={"tab"}
             tabIndex={isActive ? undefined : -1}
-            data-navigate-routes={JSON.stringify(navigateRoutes)}
+            onClick={handleClick}
             style={{ cursor: 'pointer' }}
         >
             <div className={"w-layout-hflex tab-header"}>
@@ -49,20 +57,20 @@ function getBoosterTabData(id: string): BoosterTabData {
         step1: {
             stepNumber: 1,
             title: 'Automate Creator Collaborations',
-            navigateRoutes: ['/amazon-growth/g-find-amazon-influencers-test'],
+            searchParam: '',
         },
         step2: {
             stepNumber: 2,
             title: 'Scale Product Positioning & Growth',
-            navigateRoutes: ['/amazon-growth/g-find-amazon-influencers-test?step=2'],
+            searchParam: '?step=2',
         },
         step3: {
             stepNumber: 3,
             title: 'Analyze, Optimize, and Scale',
-            navigateRoutes: ['/amazon-growth/g-find-amazon-influencers-test?step=3'],
+            searchParam: '?step=3',
         },
     }
-    return data[id] ?? { stepNumber: 1, title: '', navigateRoutes: [] }
+    return data[id] ?? { stepNumber: 1, title: '', searchParam: '' }
 }
 
 export default BoosterTab

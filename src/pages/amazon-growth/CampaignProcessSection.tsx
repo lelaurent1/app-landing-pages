@@ -5,26 +5,24 @@ import BoosterTab from './BoosterTab.tsx'
 import TabPane from './TabPane.tsx'
 import HeaderItals from '../../shared/HeaderItals.tsx'
 
-const ROUTES = [
-    '/amazon-growth/g-find-amazon-influencers-test',
-    '/amazon-growth/g-find-amazon-influencers-test?step=2',
-    '/amazon-growth/g-find-amazon-influencers-test?step=3',
-] as const
+const STEP_SEARCHES = ['', '?step=2', '?step=3'] as const
 
 const CYCLE_MS = 6000
 
 function CampaignProcessSection() {
     const location = useLocation()
     const navigate = useNavigate()
-    const current = location.pathname + location.search + location.hash
-    const activeIdx = ROUTES.findIndex((r) => r === current)
+    const searchIdx = STEP_SEARCHES.indexOf(location.search as typeof STEP_SEARCHES[number])
+    const activeIdx = searchIdx === -1 ? 0 : searchIdx
 
     useEffect(() => {
-        if (activeIdx === -1) return
-        const next = ROUTES[(activeIdx + 1) % ROUTES.length]
-        const timer = window.setTimeout(() => navigate(next), CYCLE_MS)
+        const nextSearch = STEP_SEARCHES[(activeIdx + 1) % STEP_SEARCHES.length]
+        const timer = window.setTimeout(
+            () => navigate(nextSearch || location.pathname, { replace: true }),
+            CYCLE_MS,
+        )
         return () => window.clearTimeout(timer)
-    }, [activeIdx, navigate])
+    }, [activeIdx, navigate, location.pathname])
 
     return (
         <section className={"section-24"}>
