@@ -8,12 +8,14 @@ import { useLocation } from 'react-router-dom'
 // Component
 
         function FooterLink({
-            label
+            label,
+            href
         }: {
             label: string;
+            href: string;
         }) {
             return (
-                <a className={"footer-sml"}>
+                <a className={"footer-sml"} href={href} target="_blank" rel="noopener noreferrer">
                     {label}
                 </a>
             );

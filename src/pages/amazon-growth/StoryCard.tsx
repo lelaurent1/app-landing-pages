@@ -12,6 +12,7 @@ import StatBodyCopy from './StatBodyCopy.tsx'
             imgId: string;
             brand: string;
             title: string;
+            url: string;
             stats: {
                 value: string;
                 label: string;
@@ -32,6 +33,7 @@ import StatBodyCopy from './StatBodyCopy.tsx'
                 imgId,
                 brand,
                 title,
+                url,
                 stats,
                 hasTabIndex
             }: StoryCardData = getStoryCardData(dataId);
@@ -39,6 +41,9 @@ import StatBodyCopy from './StatBodyCopy.tsx'
             return (
                 <a
                     className={"story-link w-inline-block"}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     {...(hasTabIndex ? { tabIndex: "-1" } : {})}
                 >
                     <div className={`testimonials-01-image-box ${imageVariant}`}>
@@ -103,6 +108,7 @@ function getStoryCardData(id): StoryCardData  {
                   "imgId": "42",
                   "brand": "Aunt Fannie's",
                   "title": "Aunt Fannie’s scaled an eco-cleaner to 8x Amazon sales in 90 days",
+                  "url": "https://stackinfluence.com/customer-stories/aunt-fannies",
                   "stats": [
                     { "value": "8x", "label": "Revenue", "isLast": undefined },
                     { "value": "528k", "label": "Impressions", "isLast": undefined },
@@ -116,6 +122,7 @@ function getStoryCardData(id): StoryCardData  {
                     "imgId": "42",
                     "brand": "Aunt Fannie's",
                     "title": "Aunt Fannie’s scaled an eco-cleaner to 8x Amazon sales in 90 days",
+                    "url": "https://stackinfluence.com/customer-stories/aunt-fannies",
                     "hasTabIndex": undefined,
                     "stats": [
                         { "value": "8x", "label": "Revenue", "isLast": undefined },
@@ -129,6 +136,7 @@ function getStoryCardData(id): StoryCardData  {
                     "imgId": "43",
                     "brand": "Naked Sunday",
                     "title": "How Naked Sunday scaled BeautyScreen™ to 10x Amazon sales in 4 months",
+                    "url": "https://stackinfluence.com/customer-stories/naked-sunday",
                     "hasTabIndex": true,
                     "stats": [
                         { "value": "10x", "label": "Revenue", "isLast": undefined },
@@ -142,6 +150,7 @@ function getStoryCardData(id): StoryCardData  {
                     "imgId": "43",
                     "brand": "Naked Sunday",
                     "title": "How Naked Sunday scaled BeautyScreen™ to 10x Amazon sales in 4 months",
+                    "url": "https://stackinfluence.com/customer-stories/naked-sunday",
                     "hasTabIndex": true,
                     "stats": [
                         { "value": "10x", "label": "Revenue", "isLast": undefined },
@@ -155,6 +164,7 @@ function getStoryCardData(id): StoryCardData  {
                   "imgId": "44",
                   "brand": "Inopro",
                   "title": "InoPro scaled Amazon sales 7x with Influencer-driven demand",
+                  "url": "https://stackinfluence.com/customer-stories/inopro",
                   "hasTabIndex": true,
                   "stats": [
                     { "value": "7x", "label": "Monthly Sales", "isLast": undefined },
@@ -168,6 +178,7 @@ function getStoryCardData(id): StoryCardData  {
                   "imgId": "42",
                   "brand": "Aunt Fannie's",
                   "title": "Aunt Fannie’s scaled an eco-cleaner to 8x Amazon sales in 90 days",
+                  "url": "https://stackinfluence.com/customer-stories/aunt-fannies",
                   "stats": [
                     { "value": "8x", "label": "Revenue", "isLast": undefined },
                     { "value": "528k", "label": "Impressions", "isLast": undefined },

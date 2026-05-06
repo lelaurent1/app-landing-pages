@@ -10,13 +10,15 @@ import Img from './Img.tsx'
 
         function StoreBadgeLink({
             className,
-            imgId
+            imgId,
+            href
         }: {
             className: string;
             imgId: string;
+            href: string;
         }) {
             return (
-                <a className={className}>
+                <a className={className} href={href} target="_blank" rel="noopener noreferrer">
                     <Img id={imgId} />
                 </a>
             );

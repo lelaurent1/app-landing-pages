@@ -28,8 +28,16 @@ import FooterLink from './FooterLink.tsx'
                                 </div>
                             </a>
                             <div className={"w-layout-hflex flex-block-14"}>
-                                <StoreBadgeLink className="link-block w-inline-block" imgId="45" />
-                                <StoreBadgeLink className="link-block-2 w-inline-block" imgId="46" />
+                                <StoreBadgeLink
+                                    className="link-block w-inline-block"
+                                    imgId="45"
+                                    href="https://apps.apple.com/us/app/stack-influence-creator-deals/id6481402069"
+                                />
+                                <StoreBadgeLink
+                                    className="link-block-2 w-inline-block"
+                                    imgId="46"
+                                    href="https://play.google.com/store/apps/details?id=com.stackinfluence.creators"
+                                />
                             </div>
                         </div>
                         <div className={"footer-copyright"}>
@@ -47,9 +55,9 @@ import FooterLink from './FooterLink.tsx'
                             </div>
                             <div className={"uui-footer05_legal-list-wrapper"}>
                                 <div className={"w-layout-grid uui-footer05_legal-list"}>
-                                    <FooterLink label="Creator terms" />
-                                    <FooterLink label="Website terms" />
-                                    <FooterLink label="Privacy" />
+                                    <FooterLink label="Creator terms" href="https://stackinfluence.com/influencer-terms" />
+                                    <FooterLink label="Website terms" href="https://stackinfluence.com/terms-conditions" />
+                                    <FooterLink label="Privacy" href="https://stackinfluence.com/privacy-policy" />
                                 </div>
                             </div>
                         </div>

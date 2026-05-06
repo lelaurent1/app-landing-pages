@@ -46,7 +46,12 @@ const LOGO_IDS = Array.from({ length: 30 }, (_, i) => String(i + 3))
                                             Trusted by<HeaderItals>thousands</HeaderItals>of eCommerce brands
                                         </div>
                                     </div>
-                                    <a className={"button w-variant-c9f11e0e-c163-0ada-5fbc-21bd82715afe w-button"}>
+                                    <a
+                                        className={"button w-variant-c9f11e0e-c163-0ada-5fbc-21bd82715afe w-button"}
+                                        href="https://stackinfluence.com/customer-stories"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         View all
                                     </a>
                                 </div>
