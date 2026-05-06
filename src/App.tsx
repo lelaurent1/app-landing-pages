@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { track } from './lib/analytics.ts'
 
@@ -87,6 +87,17 @@ document.addEventListener(
 )
 
 function App() {
+    // React mounts on <html>, which strips the static <head> from index.html.
+    // Inject the favicon link after mount so it survives the render.
+    useEffect(() => {
+        if (document.querySelector('link[rel="icon"]')) return
+        const link = document.createElement('link')
+        link.rel = 'icon'
+        link.type = 'image/svg+xml'
+        link.href = './favicon.svg'
+        document.head.appendChild(link)
+    }, [])
+
     return (
         <Router>
             <Suspense fallback={null}>
